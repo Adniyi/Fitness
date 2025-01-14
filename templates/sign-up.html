@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block link %}<link rel="stylesheet" href="{{url_for('static', filename='sign_up.css')}}">{% endblock %}
+{%block title %} Sign Up {%endblock%}
+
+{%block content %} 
+<div class="form-container">
+    <h3>Create an Account</h3>
+    <form action="/sign-up" method="post">
+        <label for="name">Enter Username: </label><br>
+        <input type="text" name="username" id="name" placeholder="Enter Username" required><br><br>
+        <label for="email">Enter Email:</label><br>
+        <input type="email" name="email" id="email" placeholder="Enter Email"><br><br>
+        <label for="password">Enter Password:</label><br>
+        <input type="password" name="password" id="password" placeholder="Enter Password" required><br><br>
+        <label for="password">Enter Password Again:</label><br>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-enter Password" required><br>
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <p>Don't have an Account? <span><a href="/login">Login</a></span></p>
+</div>
+
+{%endblock%}
+
+

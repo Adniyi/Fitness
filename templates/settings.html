@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block link %}<link rel="stylesheet" href="{{url_for('static', filename='settings.css')}}">{% endblock %}
+{%block title %} Settings {%endblock%}
+
+
+{%block content %}
+<main>
+    <div class="profile-card">
+        <div class="banner">
+            <input type="file" id="banner-upload" name="image1" accept="image/*" hidden>
+            <label for="banner-upload" class="banner-upload-btn"><img src="/static/straighten_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="upload banner"></label>
+        </div>
+        <div class="side-div">
+            <h1>{{users.username}}</h1>
+            <p>@{{users.username}}</p><br>
+            <p>Joined {{users.date_created}}</p>
+            <p>Total Workouts: <br>
+            <p>{{total_cal}}cals</p>
+            <p>{{total_dur}}mins</p> 
+        </div>
+    </div>
+</main>
+
+
+<script src="{{url_for('static', filename='settings.js')}}"></script>
+{%endblock%}

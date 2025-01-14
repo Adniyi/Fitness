@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block link %}<link rel="stylesheet" href="{{url_for('static', filename='dashboard.css')}}">{% endblock %}
+
+
+{%block title %} Dashboard {%endblock%}
+
+
+{%block content %}
+<h1>Dashboard</h1>
+<!-- <div class="grid-container">
+    
+</div> -->
+
+<div class="flex-container">
+    <div class="card">
+        <h2>Total Calories Burned</h2>
+        
+        <p>{{total_cal}}cals</p>
+    </div>
+
+    <div class="card">
+        <h2>Total Time Spent</h2>
+        <p>{{total_dur}}mins</p>
+    </div>
+</div>
+
+<div class="flex-container">
+    <!-- <div class="card">
+        <h2>Achieved Goals</h2>
+        <p>1</p>
+    </div>
+    <div class="card">
+        <h2>Not Achieved Goals</h2>
+        <p>1</p>
+    </div> -->
+    <!-- <div class="card">
+        <h2>Total Distance Covered</h2>
+        <p>50km</p>
+    </div>
+    <div class="card">
+        <h2>Total Steps Taken</h2>
+        <p>355steps</p>
+    </div> -->
+</div>
+
+<a href="/tracker"><button class="btn">Create a Workout</button></a>
+{%endblock%}

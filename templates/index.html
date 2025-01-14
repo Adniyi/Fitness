@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block link %}<link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">{% endblock %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %} 
+<section class="home" id="home">
+<div class="home-content">
+    <h3>Track Your</h3>
+    <h1>Health</h1>
+    <h1><span class="multiple-text">Keep Fit</span></h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque libero ratione exercitationem voluptate recusandae quis, cupiditate officia nostrum dignissimos odio laudantium quisquam tempora autem numquam. Nisi doloribus odio qui exercitationem.</p>
+    <a href="/sign-up" class="btn">Join us</a>
+</div>
+<div class="home-img">
+    <img src="/static/No-Equipment-Home-Workout-2-removebg-preview.png" alt="Home-image">
+</div>
+</section>
+
+{% endblock %}

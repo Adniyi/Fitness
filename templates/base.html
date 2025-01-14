@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    {%block link %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo">Fitness <span>Tracker</span></a>
+
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+            <p>---</p>
+        </div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            {% if users.is_authenticated %}
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/tracker">Workout Tracker</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/sign-up">Sign-Up</a></li>
+            <li><a href="/login">Login</a></li>
+            
+        </ul>
+        <div class="top-btn">
+            <a href="/sign-up" class="nav-btn">Join now</a>
+        </div>
+        {% endif %}
+
+        {% with messages = get_flashed_messages(with_categories = True) %}
+        {% if messages %}
+        {% for category , message in messages %}
+        {% if category == "error"%}
+        <div id="model-container">
+            <div id="model">
+                <p style="color: red;">{{message}}</p>
+                <div id="close-btn">&times;</div>
+            </div>
+        </div>
+        {% else %}
+        <div id="model-container">
+            <div id="model">
+                <p style="color: green;">{{message}}</p>
+                <div id="close-btn">&times;</div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </header>
+
+    
+
+    {% block content %}{% endblock %}
+
+    <script>
+        const closeBtn = document.getElementById('close-btn');
+        const modelContainer = document.getElementById('model-container')
+        
+        closeBtn.addEventListener('click', ()=>{
+            modelContainer.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) =>{
+            if (e.target === modelContainer) {
+                modelContainer.style.display = 'none'
+            }
+        });
+
+    </script>
+</body>
+</html>

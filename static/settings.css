@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    transition: all 0.5s ease;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.profile-card{
+    padding: 2em;
+    border: 1px solid rgb(75, 82, 92);
+    border-radius: 10px;
+    background-color: #222429;
+    text-align: left;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+
+
+/* .side-div{
+    padding: 12px;
+} */
+.profile-card input{
+    width: 12px;
+    height: 12px;
+
+}
+/* .profile-card p{
+    color: #f2f2f2f2;
+    padding-bottom: 6px;
+} */
+.banner{
+    width: 65%;
+    height: 200px;
+    position: relative;
+    background: #e7e7e7;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    content: 'Upload a Profile image';
+}
+
+.banner::before{
+    content: 'Upload a Profile image';
+    color: black;
+    opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+}
+.banner-small{
+    border: none;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 12px;
+    background-color: blue;
+    margin: 0;
+    padding: 12px;
+}
+
+label img{
+    position: absolute;
+    bottom: -150px;
+    right: -10px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background: #e7e7e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #000;
+    /* top: 10px; */
+}
+
+.banner-upload-btn img{
+    width: 20px;
+}
+
+.side-div{
+}

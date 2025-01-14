@@ -6,10 +6,6 @@ BannerUpload.addEventListener('change', ()=>{
     uploadImage(BannerUpload,"Banner");
 })
 
-// if (location.reload()) {
-//     Banner.style.backgroundImage = `url(${getFile()})`;  // Corrected typo here
-// }
-
 Banner.style.backgroundImage = `url(${getFile()})`;  // Corrected typo here
 
 const uploadImage = (uploadFile, uploadType) =>{

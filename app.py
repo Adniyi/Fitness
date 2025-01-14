@@ -190,7 +190,7 @@ def tracker():
 def tracker_data():
     workouts = Workout.query.filter_by(authour=current_user.id).all()
     if not workouts:
-        flash("Please fill in the fields!", category="error")
+        # flash("Please fill in the fields!", category="error")
         return jsonify({"message":"No workout data found!"})
     
     output = []

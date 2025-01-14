@@ -36,9 +36,9 @@ formSent.addEventListener('click',function(e){
         .then(res => res.json())
     }
     
-    dateFormat.value = "";
-    CaloriesBured.value = "";
-    Duration.value = "";
+    // dateFormat.value = "";
+    // CaloriesBured.value = "";
+    // Duration.value = "";
     // WorkoutOption.value = "";
     location.reload(true)
 

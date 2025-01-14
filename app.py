@@ -159,17 +159,22 @@ def is_number(value):
 @login_required
 def tracker():
     if request.method == 'POST':
-        data  = request.get_json()
+        # data  = request.get_json()
 
-        if data == None:
-            flash("Please fill in the fields!", category="error")
-            return jsonify({"message":"No data provided!"}),400
+        # if data == None:
+        #     flash("Please fill in the fields!", category="error")
+        #     return jsonify({"message":"No data provided!"}),400
         
 
-        calories_burned = data.get('calories')
-        duration = data.get('duration')
-        date = data.get('formatSent')
-        workout_option = data.get('workoutoption')
+        # calories_burned = data.get('calories')
+        # duration = data.get('duration')
+        # date = data.get('formatSent')
+        # workout_option = data.get('workoutoption')
+
+        calories_burned = request.form.get("calories")
+        duration = request.form.get("duration")
+        date = request.form.get("date")
+        workout_option = request.form.get("workoutoption")
 
         if calories_burned:
             workout = Workout(calories_burned=calories_burned, duration=duration,date=date,type_of_workout=workout_option,authour=current_user.id)

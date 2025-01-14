@@ -10,17 +10,19 @@
         <div class="workout-form">
             <h2>Enter a New Workout</h2><br><br>
             <div class="form">
-                <input type="text" name="calories_burned" id="calories_burned" placeholder="Enter Calories Burned" required><br><br>
-                <input type="text" name="duration" id="duration" placeholder="Enter Duration" required><br><br>
-                <input type="date" name="date" id="date" placeholder="Select Date" required><br><br>
-                <select name="workout-option" id="workout-option" required>
-                    <option value="Select a Workout">Select a Workout</option>
-                    <option value="Cardio">Cardio</option>
-                    <option value="Strength">Strength</option>
-                    <option value="Flexibility">Flexibility</option>
-                    <option value="Cycling">Cycling</option>
-                </select><br><br>
-                <button type="submit" id="formSent" class="post-btn">Post Workout</button>
+                <form method="post" action="/tracker">
+                    <input type="text" name="calories_burned" id="calories_burned" placeholder="Enter Calories Burned" required><br><br>
+                    <input type="text" name="duration" id="duration" placeholder="Enter Duration" required><br><br>
+                    <input type="date" name="date" id="date" placeholder="Select Date" required><br><br>
+                    <select name="workout-option" id="workout-option" required>
+                        <option value="Select a Workout">Select a Workout</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Strength">Strength</option>
+                        <option value="Flexibility">Flexibility</option>
+                        <option value="Cycling">Cycling</option>
+                    </select><br><br>
+                    <button type="submit" id="formSent" class="post-btn">Post Workout</button>
+                </form>
             </div>
         </div>
         <div class="workout-table">

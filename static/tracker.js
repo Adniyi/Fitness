@@ -8,42 +8,42 @@ const WorkoutTable = document.querySelector('.workout-table')
 
 
 
-formSent.addEventListener('click',function(e){
-    e.preventDefault()
-    const formatDate = dateFormat.value;
-    if (formatDate) {
-        const date = new Date(formatDate);
-        const option = {day:'2-digit', month:'short', year:'numeric'};
-        const format = date.toLocaleDateString('en-GB', option);
-        console.log(format);
-        console.log(CaloriesBured.value);
-        console.log(Duration.value);
-        console.log(WorkoutOption.value);
-        console.log("It worked");
-        const dataSent = {
-            calories: CaloriesBured.value,
-            duration : Duration.value,
-            formatSent: format,
-            workoutoption : WorkoutOption.value
-        };
-        fetch(`/tracker`,{
-            method:'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dataSent)
-        })
-        .then(res => res.json())
-    }
+// formSent.addEventListener('click',function(e){
+//     e.preventDefault()
+//     const formatDate = dateFormat.value;
+//     if (formatDate) {
+//         const date = new Date(formatDate);
+//         const option = {day:'2-digit', month:'short', year:'numeric'};
+//         const format = date.toLocaleDateString('en-GB', option);
+//         console.log(format);
+//         console.log(CaloriesBured.value);
+//         console.log(Duration.value);
+//         console.log(WorkoutOption.value);
+//         console.log("It worked");
+//         const dataSent = {
+//             calories: CaloriesBured.value,
+//             duration : Duration.value,
+//             formatSent: format,
+//             workoutoption : WorkoutOption.value
+//         };
+//         fetch(`/tracker`,{
+//             method:'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(dataSent)
+//         })
+//         .then(res => res.json())
+//     }
     
-    // dateFormat.value = "";
-    // CaloriesBured.value = "";
-    // Duration.value = "";
-    // WorkoutOption.value = "";
-    location.reload(true)
+//     // dateFormat.value = "";
+//     // CaloriesBured.value = "";
+//     // Duration.value = "";
+//     // WorkoutOption.value = "";
+//     location.reload(true)
 
     
-});
+// });
 
 
 

@@ -61,8 +61,8 @@ fetch(`/tracker_data`,{
 })
 
 
-const createWork = async(data) =>{
-    let res =  await data;
+const createWork = (data) =>{
+    let res =  data;
     WorkoutTable.innerHTML += `
     <div class="workout-table-sub">
         <p>Calories Burned: <span>${res.calories_burned}cals</span></p>

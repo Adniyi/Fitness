@@ -45,7 +45,7 @@ class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(100), nullable=False, unique=True)
-    password = db.Column(db.String(10), nullable=False)
+    password = db.Column(db.String(120), nullable=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     workout = db.relationship("Workout", backref='users', passive_deletes=True)
     
@@ -54,7 +54,7 @@ class Workout(db.Model):
     calories_burned = db.Column(db.String(20), nullable=False)
     duration = db.Column(db.String(20), nullable=False)
     date = db.Column(db.String(20), nullable=False)
-    type_of_workout = db.Column(db.String(20), nullable=False)
+    type_of_workout = db.Column(db.String(120), nullable=False)
     authour = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
 
 
